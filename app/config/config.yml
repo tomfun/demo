@@ -68,3 +68,8 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+brander_category:
+    extending_mode: false
+    entities: ~
+    types: ~
