@@ -21,6 +21,10 @@
             "url": "../modules/BranderElasticaSkeletonBundle"
         },
         {
+            "type": "path",
+            "url": "../modules/category-bundle"
+        },
+        {
             "type": "vcs",
             "url": "git@github.com:Werkint/RedisBundle.git"
         },
@@ -33,19 +37,19 @@
             "url": "git@code.werkint.com:werkint/frameworkextrabundle.git"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.9",
         "symfony/symfony": "2.8.*",
-        "doctrine/orm": "^2.4.8",
+        "doctrine/orm": "2.4.8",
         "doctrine/doctrine-bundle": "~1.4",
         "symfony/swiftmailer-bundle": "~2.3",
         "symfony/monolog-bundle": "~2.4",
         "sensio/distribution-bundle": "~5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "~2.0",
-        "tomfun/brander-eav": "^0.0.7",
-        "knplabs/doctrine-behaviors": "^1.3"
+        "knplabs/doctrine-behaviors": "^1.3",
+        "doctrine/doctrine-fixtures-bundle": "^2.3",
+        "fzaninotto/faker": "^1.5"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",
