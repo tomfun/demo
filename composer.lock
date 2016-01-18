@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "05c69b039e0c06141abc0c6521f9f687",
-    "content-hash": "f424311d584254b7a5b60b14a7b76c1e",
+    "hash": "f630d7663140bc35fc84d91847aaac94",
+    "content-hash": "570e466aea6e35ee330b0697f0f5fb41",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -921,6 +921,87 @@
                 "orm"
             ],
             "time": "2015-08-31 13:19:01"
+        },
+        {
+            "name": "friendsofsymfony/elastica-bundle",
+            "version": "3.1.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfSymfony/FOSElasticaBundle.git",
+                "reference": "19ca605228c3baabd4e57f120528e3571c9d7647"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSElasticaBundle/zipball/19ca605228c3baabd4e57f120528e3571c9d7647",
+                "reference": "19ca605228c3baabd4e57f120528e3571c9d7647",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "psr/log": "~1.0",
+                "ruflin/elastica": "~2.1",
+                "symfony/console": "~2.1",
+                "symfony/form": "~2.1",
+                "symfony/framework-bundle": "~2.3",
+                "symfony/property-access": "~2.3"
+            },
+            "require-dev": {
+                "doctrine/doctrine-bundle": "~1.2",
+                "doctrine/orm": "~2.4",
+                "jms/serializer-bundle": "@stable",
+                "knplabs/knp-components": "~1.2",
+                "knplabs/knp-paginator-bundle": "~2.4",
+                "pagerfanta/pagerfanta": "~1.0",
+                "phpunit/phpunit": "~4.1",
+                "propel/propel1": "1.6.*",
+                "symfony/browser-kit": "~2.3",
+                "symfony/expression-language": "~2.4",
+                "symfony/twig-bundle": "~2.3"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FOS\\ElasticaBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tim Nagel",
+                    "email": "tim@nagel.com.au"
+                },
+                {
+                    "name": "Richard Miller",
+                    "email": "richard.miller@limethinking.co.uk"
+                },
+                {
+                    "name": "FriendsOfSymfony Community",
+                    "homepage": "https://github.com/FriendsOfSymfony/FOSElasticaBundle/contributors"
+                },
+                {
+                    "name": "Jeremy Mikola",
+                    "email": "jmikola@gmail.com"
+                }
+            ],
+            "description": "Elasticsearch PHP integration for your Symfony2 project using Elastica",
+            "homepage": "https://github.com/FriendsOfSymfony/FOSElasticaBundle",
+            "keywords": [
+                "doctrine2",
+                "elastica",
+                "elasticsearch",
+                "mongodb",
+                "propel",
+                "search"
+            ],
+            "time": "2016-01-07 04:54:39"
         },
         {
             "name": "friendsofsymfony/rest-bundle",
@@ -2128,6 +2209,73 @@
             "time": "2015-05-16 17:16:14"
         },
         {
+            "name": "pagerfanta/pagerfanta",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/whiteoctober/Pagerfanta.git",
+                "reference": "a874d3612d954dcbbb49e5ffe178890918fb76fb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/whiteoctober/Pagerfanta/zipball/a874d3612d954dcbbb49e5ffe178890918fb76fb",
+                "reference": "a874d3612d954dcbbb49e5ffe178890918fb76fb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "doctrine/orm": "~2.3",
+                "doctrine/phpcr-odm": "1.*",
+                "jackalope/jackalope-doctrine-dbal": "1.*",
+                "jmikola/geojson": "~1.0",
+                "mandango/mandango": "~1.0@dev",
+                "mandango/mondator": "~1.0@dev",
+                "phpunit/phpunit": "~4",
+                "propel/propel1": "~1.6",
+                "ruflin/elastica": "~1.3",
+                "solarium/solarium": "~3.1"
+            },
+            "suggest": {
+                "doctrine/mongodb-odm": "To use the DoctrineODMMongoDBAdapter.",
+                "doctrine/orm": "To use the DoctrineORMAdapter.",
+                "doctrine/phpcr-odm": "To use the DoctrineODMPhpcrAdapter. >= 1.1.0",
+                "mandango/mandango": "To use the MandangoAdapter.",
+                "propel/propel1": "To use the PropelAdapter",
+                "solarium/solarium": "To use the SolariumAdapter."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Pagerfanta\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pablo Díez",
+                    "email": "pablodip@gmail.com"
+                }
+            ],
+            "description": "Pagination for PHP 5.3",
+            "keywords": [
+                "page",
+                "pagination",
+                "paginator",
+                "paging"
+            ],
+            "time": "2014-10-06 10:57:25"
+        },
+        {
             "name": "paragonie/random_compat",
             "version": "1.1.5",
             "source": {
@@ -2276,6 +2424,56 @@
             "time": "2015-07-25 16:39:46"
         },
         {
+            "name": "predis/predis",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nrk/predis.git",
+                "reference": "84060b9034d756b4d79641667d7f9efe1aeb8e04"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/84060b9034d756b4d79641667d7f9efe1aeb8e04",
+                "reference": "84060b9034d756b4d79641667d7f9efe1aeb8e04",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "suggest": {
+                "ext-curl": "Allows access to Webdis when paired with phpiredis",
+                "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Predis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniele Alessandri",
+                    "email": "suppakilla@gmail.com",
+                    "homepage": "http://clorophilla.net"
+                }
+            ],
+            "description": "Flexible and feature-complete PHP client library for Redis",
+            "homepage": "http://github.com/nrk/predis",
+            "keywords": [
+                "nosql",
+                "predis",
+                "redis"
+            ],
+            "time": "2015-07-30 18:34:15"
+        },
+        {
             "name": "psr/log",
             "version": "1.0.0",
             "source": {
@@ -2312,6 +2510,63 @@
                 "psr-3"
             ],
             "time": "2012-12-21 11:40:51"
+        },
+        {
+            "name": "ruflin/elastica",
+            "version": "2.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ruflin/Elastica.git",
+                "reference": "0df1d7b513960ba11d3075652dcd71fcab8dd37a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ruflin/Elastica/zipball/0df1d7b513960ba11d3075652dcd71fcab8dd37a",
+                "reference": "0df1d7b513960ba11d3075652dcd71fcab8dd37a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "psr/log": "~1.0"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "5.3.*",
+                "munkie/elasticsearch-thrift-php": "1.4.*"
+            },
+            "suggest": {
+                "egeloen/http-adapter": "Allow using httpadapter transport",
+                "guzzlehttp/guzzle": "Allow using guzzle 5.3.x as the http transport (Requires php 5.4)",
+                "monolog/monolog": "Logging request",
+                "munkie/elasticsearch-thrift-php": "Allow using thrift transport"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Elastica\\": "lib/Elastica/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Ruflin",
+                    "homepage": "http://ruflin.com/"
+                }
+            ],
+            "description": "Elasticsearch Client",
+            "homepage": "http://elastica.io/",
+            "keywords": [
+                "client",
+                "search"
+            ],
+            "time": "2015-10-19 07:09:10"
         },
         {
             "name": "sensio/distribution-bundle",
@@ -3223,6 +3478,108 @@
             "time": "2016-01-14 12:01:11"
         },
         {
+            "name": "tomfun/brander-eav-dev",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../modules/BranderEAVBundle/",
+                "reference": "05b2abe750414ba6cc358658908592b9c58e0738",
+                "shasum": null
+            },
+            "require": {
+                "doctrine/orm": "*",
+                "friendsofsymfony/rest-bundle": "*",
+                "jms/di-extra-bundle": "*",
+                "knplabs/doctrine-behaviors": "^1.3",
+                "tomfun/brander-elastica-skeleton-dev": "*",
+                "werkint/stats-bundle": "*",
+                "werkint/templating-bundle": "^0.1.0"
+            },
+            "require-dev": {
+                "doctrine/doctrine-fixtures-bundle": "*",
+                "fzaninotto/faker": "*",
+                "nelmio/api-doc-bundle": "*",
+                "werkint/framework-extra-bundle": "dev-master"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Brander\\Bundle\\EAVBundle\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Grigory Kotov",
+                    "email": "tomfun1990@gmail.com"
+                },
+                {
+                    "name": "Bogdan Yurov",
+                    "email": "bogdan@yurov.me"
+                },
+                {
+                    "name": "Vladimir Odesskij",
+                    "email": "odesskij1992@gmail.com"
+                }
+            ],
+            "description": "helps to create entity that have different attributes (fields) in same database. Also provide integration with elastic search friendsofsymfony/elastica-bundle",
+            "keywords": [
+                "EAV",
+                "elastica",
+                "elasticsearch",
+                "entity attribute value",
+                "search"
+            ]
+        },
+        {
+            "name": "tomfun/brander-elastica-skeleton-dev",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../modules/BranderElasticaSkeletonBundle/",
+                "reference": "30b5dbb0b24ad73bc0ef8d8da1c16a2d6736b55f",
+                "shasum": null
+            },
+            "require": {
+                "doctrine/annotations": "*",
+                "doctrine/common": "*",
+                "friendsofsymfony/elastica-bundle": "^3.1",
+                "jms/serializer-bundle": "*",
+                "pagerfanta/pagerfanta": "*",
+                "sensio/framework-extra-bundle": "*",
+                "symfony/symfony": "*",
+                "werkint/redis-bundle": "*"
+            },
+            "suggest": {
+                "doctrine/orm": "to use elastica it",
+                "igrvak/elastica-bundle": "Main elastic search bundle",
+                "symfony/yaml": "Required if you'd like to serialize data to YAML format."
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Brander\\Bundle\\ElasticaSkeletonBundle\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Grigory Kotov",
+                    "email": "tomfun1990@gmail.com"
+                }
+            ],
+            "description": "helps to create query for elastic search friendsofsymfony/elastica-bundle",
+            "keywords": [
+                "elastica",
+                "elasticsearch",
+                "search"
+            ]
+        },
+        {
             "name": "twig/twig",
             "version": "v1.23.3",
             "source": {
@@ -3284,6 +3641,89 @@
             "time": "2016-01-11 14:02:19"
         },
         {
+            "name": "werkint/cache-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Werkint/CacheBundle.git",
+                "reference": "1082f2d27c77bbecfdd3f89ae11b13054d7520b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Werkint/CacheBundle/zipball/1082f2d27c77bbecfdd3f89ae11b13054d7520b9",
+                "reference": "1082f2d27c77bbecfdd3f89ae11b13054d7520b9",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/common": "*",
+                "php": ">=5.6",
+                "symfony/framework-bundle": "*"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Werkint\\Bundle\\CacheBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Bogdan Yurov",
+                    "email": "bogdan@yurov.me"
+                }
+            ],
+            "description": "Bundle providing improved cacheprovider injection into services",
+            "time": "2015-07-17 16:12:56"
+        },
+        {
+            "name": "werkint/framework-extra-bundle",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "git@code.werkint.com:werkint/frameworkextrabundle.git",
+                "reference": "f65e47bea3e926ec40bd153417d506b97ea35b58"
+            },
+            "require": {
+                "php": ">=5.5",
+                "symfony/console": "*",
+                "symfony/framework-bundle": "*",
+                "twig/twig": "*",
+                "werkint/cache-bundle": "0.1.*-dev",
+                "werkint/object-routing": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Werkint\\Bundle\\FrameworkExtraBundle\\": "src/",
+                    "Werkint\\Bundle\\FrameworkExtraBundle\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Bogdan Yurov",
+                    "email": "bogdan@yurov.me"
+                }
+            ],
+            "description": "Bundle for werkint stuff",
+            "time": "2016-01-11 11:48:17"
+        },
+        {
             "name": "werkint/frontend-mapper-bundle",
             "version": "v0.0.1",
             "source": {
@@ -3336,6 +3776,183 @@
             "description": "This bundle provides integration of gulp into Symfony2",
             "abandoned": true,
             "time": "2016-01-06 12:45:36"
+        },
+        {
+            "name": "werkint/object-routing",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Werkint/object-routing.git",
+                "reference": "cfd1f2a3792f58d3d1c36997ae3a4bf5624e29e4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Werkint/object-routing/zipball/cfd1f2a3792f58d3d1c36997ae3a4bf5624e29e4",
+                "reference": "cfd1f2a3792f58d3d1c36997ae3a4bf5624e29e4",
+                "shasum": ""
+            },
+            "require": {
+                "jms/metadata": "1.*",
+                "symfony/property-access": "~2.2"
+            },
+            "require-dev": {
+                "doctrine/common": "2.*",
+                "symfony/routing": "2.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "JMS": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache2"
+            ],
+            "description": "Library for generating routes based on objects.",
+            "abandoned": "jms/object-routing",
+            "time": "2016-01-11 13:06:10"
+        },
+        {
+            "name": "werkint/redis-bundle",
+            "version": "v0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Werkint/RedisBundle.git",
+                "reference": "a78d6fdb9e95fb3a959065a8501afec5272e6308"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Werkint/RedisBundle/zipball/a78d6fdb9e95fb3a959065a8501afec5272e6308",
+                "reference": "a78d6fdb9e95fb3a959065a8501afec5272e6308",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/common": "*",
+                "php": ">=5.5",
+                "predis/predis": "*",
+                "symfony/framework-bundle": "*"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Werkint\\Bundle\\RedisBundle\\": "src/",
+                    "Werkint\\Bundle\\RedisBundle\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Bogdan Yurov",
+                    "email": "bogdan@yurov.me"
+                }
+            ],
+            "description": "Bundle providing Redis (namespaced) for services via tags",
+            "support": {
+                "source": "https://github.com/Werkint/RedisBundle/tree/v0.0.1",
+                "issues": "https://github.com/Werkint/RedisBundle/issues"
+            },
+            "time": "2014-08-23 11:27:35"
+        },
+        {
+            "name": "werkint/stats-bundle",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Werkint/StatsBundle.git",
+                "reference": "f5383375687d2ddee97fbd557fd0b5a5052f2cca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Werkint/StatsBundle/zipball/f5383375687d2ddee97fbd557fd0b5a5052f2cca",
+                "reference": "f5383375687d2ddee97fbd557fd0b5a5052f2cca",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5",
+                "symfony/framework-bundle": "*",
+                "werkint/cache-bundle": "0.1.x-dev",
+                "werkint/framework-extra-bundle": "~1.0.1"
+            },
+            "require-dev": {
+                "werkint/webapp-bundle": "0.1.x-dev"
+            },
+            "suggest": {
+                "twig/twig": "Twig function for displaying stats in template",
+                "werkint/webapp-bundle": "Support for Twig extension"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Werkint\\Bundle\\StatsBundle\\": "src/",
+                    "Werkint\\Bundle\\StatsBundle\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Bogdan Yurov",
+                    "email": "bogdan@yurov.me"
+                }
+            ],
+            "description": "Stats module",
+            "support": {
+                "source": "https://github.com/Werkint/StatsBundle/tree/0.0.1",
+                "issues": "https://github.com/Werkint/StatsBundle/issues"
+            },
+            "time": "2016-01-06 19:26:16"
+        },
+        {
+            "name": "werkint/templating-bundle",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Werkint/templating-bundle.git",
+                "reference": "e5f3515b697eb91c41aa527548d30f3e35de6517"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Werkint/templating-bundle/zipball/e5f3515b697eb91c41aa527548d30f3e35de6517",
+                "reference": "e5f3515b697eb91c41aa527548d30f3e35de6517",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5",
+                "symfony/framework-bundle": ">=2.0.9",
+                "werkint/frontend-mapper-bundle": "*"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Werkint\\Bundle\\TemplatingBundle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vladimir Odesskij",
+                    "email": "odesskij1992@gmail.com"
+                }
+            ],
+            "abandoned": true,
+            "time": "2016-01-11 11:30:55"
         },
         {
             "name": "willdurand/jsonp-callback-validator",
@@ -3539,7 +4156,10 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "katem/category-bundle": 20
+        "katem/category-bundle": 20,
+        "tomfun/brander-elastica-skeleton-dev": 20,
+        "werkint/cache-bundle": 20,
+        "tomfun/brander-eav-dev": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

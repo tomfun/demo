@@ -17,10 +17,10 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
 
-//            new Brander\Bundle\EAVBundle\BranderEAVBundle(),
-//            new Werkint\Bundle\StatsBundle\WerkintStatsBundle(),
+            new Brander\Bundle\EAVBundle\BranderEAVBundle(),
+            new Werkint\Bundle\StatsBundle\WerkintStatsBundle(),
             new \Werkint\Bundle\FrontendMapperBundle\WerkintFrontendMapperBundle($this),
-//            new \Brander\Bundle\CategoryBundle\BranderCategoryBundle(),
+            new \Brander\Bundle\CategoryBundle\BranderCategoryBundle(),
 
             new \Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
         );
