@@ -1,0 +1,28 @@
+{
+  "name": "brander-app",
+  "version": "0.0.1",
+  "authors": [
+    "Someone <someone@gmail.com>"
+  ],
+  "ignore": [
+    "**/.*"
+  ],
+  "resolutions": {
+    "underscore": "~1.8.3",
+    "backbone": "~1.1.2",
+    "backbone.relational": "2f66cc5022"
+  },
+  "overrides": {
+    "renames": {},
+    "social": {
+      "normalize": {
+        "js/social": "*.js"
+      }
+    },
+    "requirejs-domready": {
+      "main": [
+        "domReady.js"
+      ]
+    }
+  }
+}

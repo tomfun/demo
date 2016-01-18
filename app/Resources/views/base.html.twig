@@ -5,9 +5,16 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <!-- require -->
+        <script src="{{ asset('assets/js/require.js') }}"></script>
+        <!-- require config -->
+        <script src="{{ asset('bundles/app/config.js') }}"></script>
     </head>
     <body>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
+        <div class="templates" id="global_page_templates" style="display: none">
+            {#{% twigjsresult %}#}
+        </div>
     </body>
 </html>
