@@ -42,6 +42,20 @@ class Product
      */
     private $title;
 
+    /**
+     * @var Category
+     *
+     * @ORM\ManyToOne(targetEntity="Category")
+     */
+    private $category;
+
+    /**
+     * @var Store
+     *
+     * @ORM\ManyToOne(targetEntity="Store")
+     */
+    private $store;
+
 
     /**
      * Get id
@@ -123,6 +137,42 @@ class Product
     public function getTitle()
     {
         return $this->title;
+    }
+
+    /**
+     * @return Category
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param Category $category
+     * @return $this
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+        return $this;
+    }
+
+    /**
+     * @return Store
+     */
+    public function getStore()
+    {
+        return $this->store;
+    }
+
+    /**
+     * @param Store $store
+     * @return $this
+     */
+    public function setStore($store)
+    {
+        $this->store = $store;
+        return $this;
     }
 }
 

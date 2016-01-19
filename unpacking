@@ -1,0 +1,36 @@
+#!/bin/sh
+
+if [ ! "$#" -eq  "0" ];
+then
+    if ([ "$1"  = "--prod" ]) || ([ "$2"  = "--prod" ]);
+    then
+        export SYMFONY_ENV=prod
+        echo $SYMFONY_ENV
+    fi
+    if ([ "$1"  = "--dev" ]) || ([ "$2"  = "--dev" ]);
+    then
+        export SYMFONY_ENV=dev
+        echo $SYMFONY_ENV
+    fi
+fi
+
+rm -Rf app/cache/*
+rm -Rf web/assets/*
+
+npm install && \
+composer install && \
+app/console doctrine:cache:clear-metadata && \
+redis-cli flushdb
+#app/console cache:accelerator:clear
+app/console doctrine:cache:clear-r && \
+app/console doctrine:cache:clear-q && \
+app/console cache:clear && \
+#app/console cms:symfony:dump && \
+app/console doctrine:schema:drop --force && \
+app/console doctrine:schema:create && \
+#app/console fos:elastica:reset && \
+app/console doctrine:fixtures:load -n && \
+app/console assets:install && \
+#npm install gulp
+gulp
+#app/console fos:elastica:populate
