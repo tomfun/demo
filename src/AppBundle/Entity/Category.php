@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Brander\Bundle\EAVBundle\Entity as EAV;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -35,6 +36,21 @@ class Category
      */
     private $sort;
 
+    /**
+     * @var EAV\AttributeSet
+     * @ORM\ManyToOne(targetEntity="Brander\Bundle\EAVBundle\Entity\AttributeSet")
+     * @ORM\JoinColumn(name="product_attribute_set", referencedColumnName="id", onDelete="CASCADE")
+     * *Serializer\Expose()
+     */
+    protected $productSet;
+
+    /**
+     * @var EAV\AttributeSet
+     * @ORM\ManyToOne(targetEntity="Brander\Bundle\EAVBundle\Entity\AttributeSet")
+     * @ORM\JoinColumn(name="store_attribute_set", referencedColumnName="id", onDelete="CASCADE")
+     * *Serializer\Expose()
+     */
+    protected $storeSet;
 
     /**
      * Get id
@@ -93,5 +109,40 @@ class Category
     {
         return $this->sort;
     }
+
+    /**
+     * @return EAV\AttributeSet
+     */
+    public function getProductSet()
+    {
+        return $this->productSet;
+    }
+
+    /**
+     * @param EAV\AttributeSet $productSet
+     * @return $this
+     */
+    public function setProductSet($productSet)
+    {
+        $this->productSet = $productSet;
+        return $this;
+    }
+
+    /**
+     * @return EAV\AttributeSet
+     */
+    public function getStoreSet()
+    {
+        return $this->storeSet;
+    }
+
+    /**
+     * @param EAV\AttributeSet $storeSet
+     */
+    public function setStoreSet($storeSet)
+    {
+        $this->storeSet = $storeSet;
+    }
+
 }
 

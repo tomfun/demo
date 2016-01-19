@@ -3,7 +3,9 @@ namespace AppBundle\DataFixtures\ORM;
 
 use AppBundle\Entity\Category;
 use Brander\Bundle\EAVBundle\DataFixtures\AbstractFixture;
+use Brander\Bundle\EAVBundle\DataFixtures\ORM\LoadAttributeData;
 use Brander\Bundle\EAVBundle\Entity\Attribute;
+use Brander\Bundle\EAVBundle\Entity\AttributeSet;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Yaml\Yaml;
@@ -16,7 +18,8 @@ class LoadCategoryData extends AbstractFixture
     /**
      * @return int
      */
-    public static function getItemCount() {
+    public static function getItemCount()
+    {
         return static::$itemCount;
     }
 
@@ -47,9 +50,10 @@ class LoadCategoryData extends AbstractFixture
      * @param AbstractFixture $fixture
      * @return Category[]
      */
-    public static function getArray(AbstractFixture $fixture) {
+    public static function getArray(AbstractFixture $fixture)
+    {
         $res = [];
-        foreach(range(0, static::$itemCount - 1) as $i) {
+        foreach (range(0, static::$itemCount - 1) as $i) {
             $res[] = $fixture->getReference('app-category-' . $i);
         }
         return $res;
@@ -61,8 +65,30 @@ class LoadCategoryData extends AbstractFixture
     public function loadFixture(ObjectManager $manager)
     {
         $i = static::$itemCount;
+        $attributes = LoadAttributeData::getArray($this);
+        $attributeCount = count($attributes);
+        $saset = new AttributeSet();
+        $saset
+            ->setAttributes($attributes)
+            ->setTitle('store-set');
+        $manager->persist($saset);
         foreach (range(1, 10) as $itemNumber) {
             $category = $this->createCategory($manager);
+
+            $attrs = [];
+            for ($a = 0; $a + 2 < $attributeCount; $a++) {
+                $attrs[] = $attributes[($itemNumber + $a) % $attributeCount];
+            }
+            $paset = new AttributeSet();
+            $paset
+                ->setAttributes($attrs)
+                ->setTitle('attribute-set-' . $itemNumber);
+            $manager->persist($paset);
+
+            $category
+                ->setProductSet($paset)
+                ->setStoreSet($saset);
+
 
             $manager->persist($category);
             $this->setReference('app-category-' . $i++, $category);
@@ -92,7 +118,7 @@ class LoadCategoryData extends AbstractFixture
     private function getData()
     {
         return Yaml::parse(file_get_contents(
-                               $this->getContainer()->getParameter('brander_eav.fixtures_directory') . '/attributes.yml'
+            $this->getContainer()->getParameter('brander_eav.fixtures_directory') . '/attributes.yml'
         ));
     }
 
@@ -101,6 +127,6 @@ class LoadCategoryData extends AbstractFixture
      */
     public function getOrder()
     {
-        return 0;
+        return 1;
     }
 }

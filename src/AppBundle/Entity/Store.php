@@ -2,6 +2,11 @@
 
 namespace AppBundle\Entity;
 
+use Brander\Bundle\EAVBundle\Entity as EAV;
+use Brander\Bundle\EAVBundle\Entity\AttributeSet;
+use Brander\Bundle\EAVBundle\Model\ExtensibleEntityInterface;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -10,7 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="store")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\StoreRepository")
  */
-class Store
+class Store implements ExtensibleEntityInterface
 {
     /**
      * @var int
@@ -42,6 +47,36 @@ class Store
      */
     private $grace;
 
+    /**
+     * @var Category
+     *
+     * @ORM\ManyToOne(targetEntity="Category")
+     */
+    private $category;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="\Brander\Bundle\EAVBundle\Entity\Value", cascade={"all"})
+     * @ORM\JoinTable(name="store_attribute_values",
+     *      joinColumns={
+     *          @ORM\JoinColumn(name="advert_id", referencedColumnName="id", onDelete="CASCADE")
+     *      },
+     *      inverseJoinColumns={
+     *          @ORM\JoinColumn(name="value_id", referencedColumnName="id", onDelete="CASCADE")
+     *      }
+     * )
+     * *Serializer\Type("array<Brander\Bundle\EAVBundle\Entity\Value>")
+     * @var EAV\Value[]|Collection
+     * *Serializer\Groups({"=((g('view') || g('list'))&& read) || g('create') || g('admin')"})
+     */
+    protected $values;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->setValues(new ArrayCollection());
+    }
 
     /**
      * Get id
@@ -124,5 +159,53 @@ class Store
     {
         return $this->grace;
     }
+
+    /**
+     * @return Category
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param Category $category
+     * @return $this
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+        return $this;
+    }
+
+    /**
+     * @return EAV\Value[]|Collection
+     */
+    public function getValues()
+    {
+        return $this->values;
+    }
+
+    /**
+     * @param EAV\Value[]|Collection $values
+     */
+    public function setValues($values)
+    {
+        $this->values = $values;
+    }
+
+    /**
+     * @return AttributeSet
+     */
+    public function getAttributeSet()
+    {
+        $cat = $this->getCategory();
+        if (!$cat) {
+            return null;
+        }
+        return $cat->getProductSet();
+    }
+
+
 }
 

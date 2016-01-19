@@ -64,15 +64,27 @@ class LoadStoreData extends AbstractFixture
      */
     public function loadFixture(ObjectManager $manager)
     {
-        $i = static::$itemCount;
-        foreach (range(1, 10) as $itemNumber) {
-            $store = $this->createStore($manager);
+        $progressHelper = AbstractFixture::getProgressBar(2.6 * LoadCategoryData::getItemCount());
 
-            $manager->persist($store);
-            $this->setReference('app-store-' . $i++, $store);
+        $i = static::$itemCount;
+        foreach (LoadCategoryData::getArray($this) as $category) {
+            foreach (range(1, mt_rand(1, 4)) as $itemNumber) {
+                $store = $this->createStore($manager);
+                $store->setCategory($category);
+                $this->setEavValues($store);
+
+                $manager->persist($store);
+                $this->setReference('app-store-' . $i++, $store);
+                if ($progressHelper) {
+                    $progressHelper->advance();
+                }
+            }
         }
         static::$itemCount = $i;
         $manager->flush();
+        if ($progressHelper) {
+            AbstractFixture::getOutput()->writeln('');
+        }
     }
 
 
@@ -109,6 +121,6 @@ class LoadStoreData extends AbstractFixture
      */
     public function getOrder()
     {
-        return 1;
+        return 2;
     }
 }
